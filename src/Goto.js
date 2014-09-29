@@ -64,7 +64,7 @@ define([
     setupConnections: function() {
       this.helpTooltip = new TooltipDialog({
         id: this.baseClass + '_helpTooltip',
-        style: "width: 300px;",
+        style: 'width: 300px;',
         content: '',
         onBlur: lang.hitch(this, function(){
             popup.close(this.helpTooltip);
@@ -174,8 +174,8 @@ define([
       while ((dmsMatch = dmsRe.exec(dmsStr)) !== null) {
         degrees = Number(dmsMatch[1]);
 
-        minutes = typeof(dmsMatch[2]) !== "undefined" ? Number(dmsMatch[2]) / 60 : 0;
-        seconds = typeof(dmsMatch[3]) !== "undefined" ? Number(dmsMatch[3]) / 3600 : 0;
+        minutes = typeof(dmsMatch[2]) !== 'undefined' ? Number(dmsMatch[2]) / 60 : 0;
+        seconds = typeof(dmsMatch[3]) !== 'undefined' ? Number(dmsMatch[3]) / 3600 : 0;
         hemisphere = dmsMatch[4] || null;
         if (hemisphere !== null && /[SW]/i.test(hemisphere)) {
           degrees = Math.abs(degrees) * -1;
