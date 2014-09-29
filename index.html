@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
-  <title>Nearby Tests</title>
+  <title>Goto Tests</title>
   <link rel="stylesheet" href="http://js.arcgis.com/3.10/js/esri/css/esri.css">
   <link rel="stylesheet" href="http://js.arcgis.com/3.10/js/dojo/dijit/themes/claro/claro.css">
   <style>
@@ -36,7 +36,7 @@
     'src/Goto',
     'esri/map',
     'dojo/domReady!'
-  ], function(Nearby, Map, ArcGISDynamicMapServiceLayer, on) {
+  ], function(Goto, Map, ArcGISDynamicMapServiceLayer, on) {
 
     // init map
     map = new Map('map', {
@@ -46,7 +46,7 @@
       sliderStyle: 'small'
     });
 
-    gotoWidget = new Nearby({
+    gotoWidget = new Goto({
       map: map
     }, 'widgetNode');
     gotoWidget.startup();
