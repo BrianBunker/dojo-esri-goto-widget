@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+  <title>Nearby Tests</title>
+  <link rel="stylesheet" href="http://js.arcgis.com/3.10/js/esri/css/esri.css">
+  <link rel="stylesheet" href="http://js.arcgis.com/3.10/js/dojo/dijit/themes/claro/claro.css">
+  <style>
+  @import url('main.css');
+  /* override default styles here */
+  </style>
+</head>
+
+<body class="claro">
+  <div id="map"></div>
+  <div id="widgetContainer">
+    <div id="widgetNode"></div>
+  </div>
+  <script type="text/javascript">
+  var dojoConfig = {
+    async: true,
+    packages: [{
+      name: 'src',
+      location: location.pathname.replace(/[^\/]+$/, '') + 'src'
+    }]
+  };
+  </script>
+  <script src="http://js.arcgis.com/3.10compact/"></script>
+  <script type="text/javascript">
+  var gotoWidget;
+  var map;
+
+  require([
+    'src/Goto',
+    'esri/map',
+    'dojo/domReady!'
+  ], function(Nearby, Map, ArcGISDynamicMapServiceLayer, on) {
+
+    // init map
+    map = new Map('map', {
+      basemap: 'topo',
+      center: [-122.45, 37.75],
+      zoom: 7,
+      sliderStyle: 'small'
+    });
+
+    gotoWidget = new Nearby({
+      map: map
+    }, 'widgetNode');
+    gotoWidget.startup();
+  });
+  </script>
+</body>
+
+</html>
