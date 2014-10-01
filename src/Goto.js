@@ -10,8 +10,6 @@ define([
   'dijit/TooltipDialog',
   'dijit/popup',
 
-  'put-selector',
-
   '//cdnjs.cloudflare.com/ajax/libs/proj4js/2.2.1/proj4.js',
 
   // mixins & base classes
@@ -21,9 +19,9 @@ define([
 
   // templates & widget css
   'dojo/text!./Goto/templates/Goto.html',
-  'xstyle/css!./Goto/css/Goto.css',
 
   // not referenced
+  'xstyle/css!./Goto/css/Goto.css',
   'dijit/form/Button',
   'dijit/form/TextBox',
   'dijit/form/Select'
@@ -31,10 +29,9 @@ define([
   declare, lang, array,
   on, keys,
   TooltipDialog, popup,
-  put,
   proj4,
   _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin,
-  template, css
+  template
 ) {
 
   return declare([_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin], {
